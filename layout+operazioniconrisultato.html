@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <title>layout+operazioniconrisultato</title>
+
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      
+  <style>
+    .absolutecenter{
+         margin: auto;
+         position: absolute;
+         top: 10%; left: 28%; bottom: 0%; right: 10%;
+     }
+	 .bordo{
+		 border: 1.5px solid #0062E1
+         position: absolute;
+         left: 40.5%
+	 }
+	 .posizioneinput{
+		 margin: 0 auto;
+	 }
+  </style>
+
+</head>
+
+  <body>
+	<!--con Bootstrap V.4 posso gestire l'elemento col-md anche senza il numero (verrà calcolato automaticamente),
+	l'elemento col-md non è necessario applicarlo ad ogni div se gli elementi dentro il div principale devono
+	ereditare la dimensione in stile 12 col. di quel div, viceversa se voglio che gli altri elementi aggiunti
+    abbiano una dimensione proporzionata al div al quale ho applicato un certo col-md uso un altro col-md x quel
+	div-->	
+	<div class="container absolutecenter">
+      <div class="row">
+            <form>
+            <div class="col-md-6" class="form-group posizioneinput">
+              <label for="formGroupExampleInput1"></label>
+              <input type="text" class="form-control" placeholder="Insert a number" id="input1">
+            </div><br/><br/><br/><br/>
+                    <div class="col-md-6" class="posizioneinput">
+            *Operation
+            <select class="form-control" id="operation">
+              <option>SUM</option>
+              <option>SUBTRACTION</option>
+              <option>MULTIPLICATION</option>
+              <option>DIVISION</option>
+            </select>
+                  </div><br/><br/><br/><br/>
+                <div class="col-md-6" class="form-group">
+            <label for="formGroupExampleInput2"></label>
+                <input type="text" class="form-control" placeholder="Insert a number" id="input2">
+                    </div><br/><br/><br/><br/>
+                    <div>
+              <input type="button" class="btn btn-lg btn-success bordo col-md-1" value="Perform" onclick="calc()">
+                    </div><br/><br/><br/><br/>
+            <div class="col-md-6"><hr></div><br/><br/><br/><br/>
+                    <div class="col-md-6">
+                     <input class="form-control" type="text" placeholder="Result" id="output" readonly>
+                    </div>
+            </form>
+        </div>
+     </div>
+
+     <script type="text/javascript" src="js/calcolatrice.js"></script>       
+       
+   </body>
+
+</html>
